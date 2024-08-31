@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  color: black;
+}
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5em;
+  color: black;
+  padding: 20px 20px 0 20px;
+  border-bottom: 1px solid #000;
+}
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+  color: black;
+  padding: 20px 20px 0 20px;
+  border-bottom: 1px solid #000;
+}
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  color: black;
+  padding: 20px 20px 0 20px;
+  border-bottom: 1px solid #000;
+}
+#mindmap-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25) 1px, transparent 1px), 
+                    linear-gradient(90deg, rgba(0, 0, 0, 0.25) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+#mindmap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/style.css">
+</head>
+<body>
+<h1>NOISE TOP - Touchdesigner </h1>
+<h2>By Okamirufu</h2>
+<h3>Use this to explore the different types of noise available in Touchdesigner</a></h3>
+<h3>Visit My Patreon --> <a href="https://www.patreon.com/Okamirufu">Here</a></h3>
+<div id="mindmap-container">
+    <svg id="mindmap"></svg>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.0/dist/browser/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/index.js"></script>
+<script>
+(() => {
+  setTimeout(() => {
+    const { markmap: O, mm: h } = window,
+      M = new O.Toolbar();
+    M.attach(h);
+    const re = M.render();
+    re.setAttribute("style", "position:absolute;bottom:20px;right:20px"), document.body.append(re)
+  })
+})()
+</script>
+<script>
+((i, L, f, o) => {
+  const w = i();
+  window.mm = w.Markmap.create("svg#mindmap", (L || w.deriveOptions)(o), f)
+})(() => window.markmap, null, {"content":"<strong>Noise Types</strong>","children":[{"content":"<strong>Perlin Noise</strong>","children":[{"content":"<strong>Dimensions</strong>: 2D, 3D, 4D","children":[],"payload":{"lines":"2,3"}},{"content":"<strong>Algorithm</strong>: Developed by Ken Perlin in 1983","children":[{"content":"Generates smooth, continuous random noise","children":[],"payload":{"lines":"4,5"}},{"content":"Uses gradients at lattice points","children":[],"payload":{"lines":"5,6"}},{"content":"Computed by interpolating random gradient vectors across a grid","children":[],"payload":{"lines":"6,7"}},{"content":"Results in coherent and natural-looking noise patterns","children":[],"payload":{"lines":"7,8"}},{"content":"Applications: Textures, procedural generation","children":[],"payload":{"lines":"8,9"}}],"payload":{"lines":"3,9"}}],"payload":{"lines":"1,9"}},{"content":"<strong>Simplex Noise</strong>","children":[{"content":"<strong>Dimensions</strong>: 2D, 3D, 4D","children":[],"payload":{"lines":"10,11"}},{"content":"<strong>Algorithm</strong>: Developed by Ken Perlin in 2001","children":[{"content":"More computationally efficient than Perlin Noise","children":[],"payload":{"lines":"12,13"}},{"content":"Based on a skewed grid of equilateral triangles or tetrahedra","children":[],"payload":{"lines":"13,14"}},{"content":"Reduces computational complexity","children":[],"payload":{"lines":"14,15"}},{"content":"Eliminates directional artifacts","children":[],"payload":{"lines":"15,16"}},{"content":"Suitable for generating high-quality noise on GPUs","children":[],"payload":{"lines":"16,17"}}],"payload":{"lines":"11,17"}}],"payload":{"lines":"9,17"}},{"content":"<strong>Sparse Convolution Noise</strong>","children":[{"content":"<strong>Algorithm</strong>: Utilizes sparse convolution","children":[{"content":"Small number of randomly placed impulses","children":[],"payload":{"lines":"19,20"}},{"content":"Convolved with a kernel function","children":[],"payload":{"lines":"20,21"}},{"content":"Produces noise patterns controlled to appear more sparse or dense","children":[],"payload":{"lines":"21,22"}},{"content":"Useful for effects like sparse clouds or organic textures","children":[],"payload":{"lines":"22,23"}}],"payload":{"lines":"18,23"}}],"payload":{"lines":"17,23"}},{"content":"<strong>Hermite Noise</strong>","children":[{"content":"<strong>Algorithm</strong>: Based on Hermite interpolation","children":[{"content":"Smooth interpolation between points using cubic Hermite polynomials","children":[],"payload":{"lines":"25,26"}},{"content":"Offers more control over smoothness compared to Perlin or Simplex noise","children":[],"payload":{"lines":"26,27"}}],"payload":{"lines":"24,27"}}],"payload":{"lines":"23,27"}},{"content":"<strong>Harmonic Summation Noise</strong>","children":[{"content":"<strong>Algorithm</strong>: Sums multiple layers of noise (harmonics)","children":[{"content":"Different frequencies and amplitudes","children":[],"payload":{"lines":"29,30"}},{"content":"Produces fractal-like noise","children":[],"payload":{"lines":"30,31"}},{"content":"Applications: Complex, detailed textures","children":[],"payload":{"lines":"31,32"}}],"payload":{"lines":"28,32"}}],"payload":{"lines":"27,32"}},{"content":"<strong>Alligator Noise</strong>","children":[{"content":"<strong>Algorithm</strong>: Proprietary noise algorithm in TouchDesigner","children":[{"content":"Produces highly detailed and complex noise patterns","children":[],"payload":{"lines":"34,35"}},{"content":"Designed to simulate textures with scaly or reptilian appearance","children":[],"payload":{"lines":"35,36"}},{"content":"Characteristics: Sharp transitions, high contrast","children":[],"payload":{"lines":"36,37"}}],"payload":{"lines":"33,37"}}],"payload":{"lines":"32,37"}},{"content":"<strong>Random (GPU)</strong>","children":[{"content":"<strong>Algorithm</strong>: Generates completely random values for each pixel","children":[{"content":"No continuity between neighboring pixels","children":[],"payload":{"lines":"39,40"}},{"content":"Applications: Basic random number generator in shaders","children":[],"payload":{"lines":"40,41"}}],"payload":{"lines":"38,41"}}],"payload":{"lines":"37,41"}}],"payload":{"lines":"0,41"}},null)
+</script>
+</body>
+</html>
